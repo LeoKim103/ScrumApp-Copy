@@ -1,5 +1,5 @@
 //
-//  ScrumAppApp.swift
+//  ScrumApp.swift
 //  ScrumApp
 //
 //  Created by Leo Kim on 05/11/2021.
@@ -11,8 +11,10 @@ import SwiftUI
 struct ScrumAppApp: App {
     @StateObject var dataController: DataController
 
+
     init() {
         let dataController = DataController()
+
         _dataController = StateObject(wrappedValue: dataController)
     }
 
