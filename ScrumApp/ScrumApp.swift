@@ -9,15 +9,8 @@ import SwiftUI
 
 @main
 struct ScrumAppApp: App {
-    @StateObject var dataController: DataController
-
-
-    init() {
-        let dataController = DataController()
-
-        _dataController = StateObject(wrappedValue: dataController)
-    }
-
+    @StateObject var dataController: DataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
             ScrumsListView(scrums: $dataController.scrums) {

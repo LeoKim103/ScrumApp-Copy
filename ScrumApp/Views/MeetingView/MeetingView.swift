@@ -14,6 +14,7 @@ struct MeetingView: View {
 
     var player: AVPlayer { AVPlayer.sharedDingPlayer}
 
+    @State private var percentage: CGFloat = 0
 
     var body: some View {
         ZStack {
