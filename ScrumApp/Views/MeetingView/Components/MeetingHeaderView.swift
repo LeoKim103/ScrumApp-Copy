@@ -55,7 +55,6 @@ struct MeetingHeaderView: View {
         .padding([.top, .horizontal])
     }
 
-
 }
 
 struct MeetingHeaderView_Previews: PreviewProvider {

@@ -3,7 +3,7 @@
 //  ScrumApp
 //
 //  Created by Leo Kim on 08/11/2021.
-//
+//  swiftlint:disable identifier_name
 
 import Foundation
 

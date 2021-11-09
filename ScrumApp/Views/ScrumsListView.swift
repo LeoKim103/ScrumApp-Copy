@@ -83,7 +83,12 @@ extension ScrumsListView {
     private var createScrumButton: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button("Add") {
-                let newScrum = DailyScrum(title: newScrumData.title, attendees: newScrumData.attendees, lengthInMinutes: Int(newScrumData.lengthInMinutes), color: newScrumData.color)
+                let newScrum = DailyScrum(
+                    title: newScrumData.title,
+                    attendees: newScrumData.attendees,
+                    lengthInMinutes: Int(newScrumData.lengthInMinutes),
+                    color: newScrumData.color
+                )
 
                 scrums.append(newScrum)
                 isPresented = false

@@ -10,14 +10,19 @@ import SwiftUI
 @main
 struct ScrumAppApp: App {
     @StateObject var dataController: DataController = DataController()
-    
+
     var body: some Scene {
         WindowGroup {
             ScrumsListView(scrums: $dataController.scrums) {
                 dataController.save()
             }
             .environmentObject(dataController)
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: save)
+            .onReceive(
+                NotificationCenter.default.publisher(
+                    for: UIApplication.willResignActiveNotification),
+                    perform: save
+
+            )
             .onAppear {
                 dataController.load()
             }

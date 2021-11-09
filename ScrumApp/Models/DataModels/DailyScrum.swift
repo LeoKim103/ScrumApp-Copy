@@ -3,7 +3,7 @@
 //  ScrumApp
 //
 //  Created by Leo Kim on 05/11/2021.
-//
+// swiftlint:disable identifier_name
 
 import Foundation
 import SwiftUI
@@ -16,7 +16,8 @@ struct DailyScrum: Identifiable, Codable {
     var color: Color
     var history: [History]
 
-    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, color: Color, history: [History] = []) {
+    init(id: UUID = UUID(), title: String, attendees: [String],
+         lengthInMinutes: Int, color: Color, history: [History] = []) {
         self.id = id
         self.title = title
         self.attendees = attendees
@@ -29,9 +30,14 @@ struct DailyScrum: Identifiable, Codable {
 extension DailyScrum {
     static var previewData: [DailyScrum] {
         [
-            DailyScrum(title: "Design", attendees: ["Leo", "Hannah", "Cheng", "Keio"], lengthInMinutes: 10, color: Color("Design")),
-            DailyScrum(title: "App Dev", attendees: ["Marcus", "Hannah", "Porell", "Keio"], lengthInMinutes: 5, color: Color("App Dev")),
-            DailyScrum(title: "Web Dev", attendees: ["Leo", "Hannah", "Keiko", "Yuki", "Ogura"], lengthInMinutes: 25, color: Color("Web Dev"))
+            DailyScrum(title: "Design", attendees: ["Leo", "Hannah", "Cheng", "Keio"],
+                       lengthInMinutes: 10, color: Color("Design")),
+
+            DailyScrum(title: "App Dev", attendees: ["Marcus", "Hannah", "Porell", "Keio"],
+                       lengthInMinutes: 5, color: Color("App Dev")),
+
+            DailyScrum(title: "Web Dev", attendees: ["Leo", "Hannah", "Keiko", "Yuki", "Ogura"],
+                       lengthInMinutes: 25, color: Color("Web Dev"))
         ]
     }
 }

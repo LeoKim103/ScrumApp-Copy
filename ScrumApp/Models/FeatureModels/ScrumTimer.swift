@@ -3,7 +3,7 @@
 //  ScrumApp
 //
 //  Created by Leo Kim on 08/11/2021.
-//
+// swiftlint:disable identifier_name
 
 import Foundation
 
@@ -36,7 +36,8 @@ class ScrumTimer: ObservableObject {
     private var startDate: Date?
 
     /**
-     Initialise a new timer. Initialising a timer with no argument creates a ScrumTimer with no attendees and zero length.
+     Initialise a new timer.
+     Initialising a timer with no argument creates a ScrumTimer with no attendees and zero length.
      Use `startScrum()` to start the timer
      - Parameters:
         - lengthInMinutes: The meeting length.
@@ -79,7 +80,7 @@ class ScrumTimer: ObservableObject {
         secondsElapsed = index * secondsPerSpeaker
         secondsRemaining = lengthInSeconds - secondsElapsed
         startDate = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] _ in
             if let self = self,
                let startDate = self.startDate {
                 let secondsElapsed = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
